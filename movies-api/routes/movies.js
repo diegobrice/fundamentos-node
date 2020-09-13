@@ -47,7 +47,7 @@ function moviesApi(app) {
           data: movie,
           message: 'movie retrieved',
         });
-      } catch (error) {
+      } catch (err) {
         next(err);
       }
     }
@@ -64,7 +64,7 @@ function moviesApi(app) {
         data: createMovieId,
         message: 'movie created',
       });
-    } catch (error) {
+    } catch (err) {
       next(err);
     }
   });
@@ -84,7 +84,7 @@ function moviesApi(app) {
           data: updateMovieId,
           message: 'movie updated',
         });
-      } catch (error) {
+      } catch (err) {
         next(err);
       }
     }
@@ -100,7 +100,7 @@ function moviesApi(app) {
           data: deletedMovieId,
           message: 'movie deleted',
         });
-      } catch (error) {
+      } catch (err) {
         next(err);
       }
     }
