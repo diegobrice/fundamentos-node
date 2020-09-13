@@ -7,6 +7,7 @@ const DB_NAME = encodeURIComponent(config.dbName);
 
 // const MONGO_URI = `mongodb+srv://${USER}:${PASSWORD}@${config.dbHost}:@${config.dbPort}/${DB_NAME}?retryWrites=true&w=majority`;
 const MONGO_URI = `mongodb+srv://${USER}:${PASSWORD}@${config.dbHost}/${DB_NAME}?retryWrites=true&w=majority`;
+// const MONGO_URI = 'mongodb://localhost/platzi_videos';
 
 class MongoLib {
   constructor() {
@@ -15,6 +16,7 @@ class MongoLib {
       useUnifiedTopology: true,
     });
     this.dbName = DB_NAME;
+    // this.dbName = 'platzi_videos';
   }
 
   connect() {
@@ -24,7 +26,7 @@ class MongoLib {
           if (err) {
             reject(err);
           }
-          console.log('connected succesfully to mongo');
+          console.log('Connected succesfully to mongo');
           resolve(this.client.db(this.dbName));
         });
       });
